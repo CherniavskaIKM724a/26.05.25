@@ -1,0 +1,29 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+void interpretation(bool a){
+    if(a==true)cout<<"Равны";
+    else cout<<"Не равны";
+}
+
+template <class T>
+bool comparison(T a, T b) {
+    if(a==b)return true;
+    return false;
+}
+
+int main()
+{
+    SetConsoleCP(1251);            // +кириллица
+    SetConsoleOutputCP(1251);
+    int n1=2,n2=5;
+    cout <<"Сравнение целых чисел "<<n1<<" и "<<n2<<" : "; interpretation(comparison(n1, n2)) ;
+    double d1 = 3.14, d2 = 2.71;
+    cout <<"\nСравнение double чисел "<<d1<<" и "<<d2<<" : "; interpretation(comparison(d1, d2)) ;
+    string s1 = "hello", s2 = "hello";
+    cout <<"\nСравнение строк "<<s1<<" и "<<s2<<" : "; interpretation(comparison(s1, s2)) ;
+    char c1 = 'a', c2 = 'b';
+    cout <<"\nСравнение символов "<<c1<<" и "<<c2<<" : "; interpretation(comparison(c1, c2)) ;
+    return 0;
+}
