@@ -1,0 +1,27 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+template <class T>
+T maxValue(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main()
+{
+    SetConsoleCP(1251);            // +кириллица
+    SetConsoleOutputCP(1251);
+    int n1 = 2, n2 = 5;
+    cout << "Максимальное из " << n1 << " и " << n2 << " : " << maxValue(n1, n2);
+
+    double d1 = 3.14, d2 = 2.71;
+    cout << "\nМаксимальное из " << d1 << " и " << d2 << " : " << maxValue(d1, d2);
+
+    string s1 = "hello", s2 = "world";
+    cout << "\nМаксимальное из \"" << s1 << "\" и \"" << s2 << "\" : " << maxValue(s1, s2);
+
+    char c1 = 'a', c2 = 'b';
+    cout << "\nМаксимальное из '" << c1 << "' и '" << c2 << "' : " << maxValue(c1, c2);
+
+    return 0;
+}
