@@ -1,0 +1,46 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+template <typename T, size_t N>
+bool contains(T (&arr)[N], T value) {
+    for (size_t i = 0; i < N; i++) {
+        if (arr[i] == value) {return true;}
+    }
+    return false;
+}
+
+void interpretation(bool a){
+    if(a==true)cout<<"Есть";
+    else cout<<"Нет";
+}
+
+template <typename T, size_t N>
+void printArray(T (&arr)[N]) {
+    cout << "[";
+    for (size_t i = 0; i < N; i++) {
+        cout << arr[i];
+        if (i != N - 1) cout << ", ";
+    }
+    cout << "]" << endl;
+}
+int main()
+{
+    SetConsoleCP(1251);            // +кириллица
+    SetConsoleOutputCP(1251);
+    int arr[] = {1, 2, 3, 4, 5}; int searchInt = 3;
+    cout << "Массив: ";
+    printArray(arr);
+    cout << "Ищем число " << searchInt << ": "; interpretation(contains(arr,searchInt));
+
+    double darr[] = {1.1, 2.2, 3.3}; double searchDouble = 4.4;
+    cout << "\nМассив: ";
+    printArray(darr);
+    cout << "Ищем число " << searchDouble << ": "; interpretation(contains(darr, searchDouble));
+
+    string sarr[] = {"мама", "папа", "я", "счастливая", "семья"}; string searchStr = "папа";
+    cout << "\nМассив: ";
+    printArray(sarr);
+    cout << "Ищем строку \"" << searchStr << "\": "; interpretation(contains(sarr,searchStr));
+    return 0;
+}
