@@ -1,0 +1,32 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+template <typename T>
+void swapValues(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+int main()
+{
+    SetConsoleCP(1251);            // +кириллица
+    SetConsoleOutputCP(1251);
+
+    int n1 = 10, n2 = 20;
+    cout << "До обмена: x = " << n1 << ", y = " << n2;
+    swapValues(n1, n2);
+    cout << "\nПосле обмена: x = " << n1 << ", y = " << n2;
+
+    double d1 = 1.5, d2 = 2.5;
+    cout << "\nДо обмена: d1 = " << d1 << ", d2 = " << d2;
+    swapValues(d1, d2);
+    cout << "\nПосле обмена: d1 = " << d1 << ", d2 = " << d2;
+
+    string s1 = "apple", s2 = "banana";
+    cout << "\nДо обмена: s1 = " << s1 << ", s2 = " << s2;
+    swapValues(s1, s2);
+    cout << "\nПосле обмена: s1 = " << s1 << ", s2 = " << s2;
+    return 0;
+}
