@@ -1,0 +1,41 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+template <typename T, size_t N>
+T getLastElement(T (&arr)[N]) {          //по ссылке
+    return arr[N - 1];
+}
+
+template <typename T, size_t N>
+void printArray(T (&arr)[N]) {
+    cout << "[";
+    for (size_t i = 0; i < N; i++) {
+        cout << arr[i];
+        if (i != N - 1) cout << ", ";
+    }
+    cout << "]" << endl;
+}
+
+int main()
+{
+    SetConsoleCP(1251);            // +кириллица
+    SetConsoleOutputCP(1251);
+
+    int arr[] = {1, 2, 3, 4, 5};
+    cout << "Массив: ";
+    printArray(arr);
+    cout << "Последний элемент: " << getLastElement(arr) << endl;
+
+    double darr[] = {1.1, 2.2, 3.3};
+    cout << "\nМассив: ";
+    printArray(darr);
+    cout << "Последний элемент: " << getLastElement(darr) << endl;
+
+    string sarr[] = {"мама", "папа", "я", "счастливая", "семья"};
+    cout << "\nМассив: ";
+    printArray(sarr);
+    cout << "Последний элемент: " << getLastElement(sarr) << endl;
+
+    return 0;
+}
