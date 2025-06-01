@@ -1,0 +1,33 @@
+#include <iostream>
+#include <windows.h>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm> // Для max
+using namespace std;
+
+int main()
+{
+    SetConsoleCP(1251);            // +кириллица
+    SetConsoleOutputCP(1251);
+    srand(time(0));
+
+    int n;
+    vector<int> numbers;
+    cout << "Введите количество элементов: ";
+    cin >> n;
+
+    for (int i = 0; i < n; ++i) {
+        int value = rand() % 100;
+        numbers.push_back(value);
+    }
+
+    cout << "Вектор: ";
+    for (int i = 0; i < numbers.size(); ++i) {
+        cout << numbers[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Максимальный элемент: " << *max_element(numbers.begin(), numbers.end()) << endl;
+    return 0;
+}
