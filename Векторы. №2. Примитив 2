@@ -1,0 +1,27 @@
+#include <iostream>
+#include <windows.h>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    SetConsoleCP(1251);            // +кириллица
+    SetConsoleOutputCP(1251);
+    int n;
+    vector<int> numbers;
+    cout << "Введите количество элементов: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        int value;
+        cout << "Введите элемент " << i << ": ";
+        cin >> value;
+        numbers.push_back(value);// Добавляем элемент в конец
+    }
+    cout << "Вектор: ";
+    for (int i = 0; i < numbers.size(); i++) {
+        std::cout << numbers[i] << " ";
+    }
+    return 0;
+}
