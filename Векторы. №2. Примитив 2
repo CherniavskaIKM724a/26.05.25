@@ -21,7 +21,7 @@ int main()
     }
     cout << "Вектор: ";
     for (int i = 0; i < numbers.size(); i++) {
-        std::cout << numbers[i] << " ";
+    cout << numbers[i] << " ";
     }
     return 0;
 }
